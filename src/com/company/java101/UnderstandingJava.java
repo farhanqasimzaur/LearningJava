@@ -1,15 +1,13 @@
 package com.company.java101;
 
+import com.company.java101.oop.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class UnderstandingJava {
     public FelineFamily myParent;
     public Cat cat;
     MutateAnimal mutate;
     public Dog dog = new Dog();
-    LinkedList<FelineFamily> myPetList;
-    public Cat newCat = new Cat();
 
 
 //    anything we need to do whilst initializing the class.
@@ -18,7 +16,6 @@ public class UnderstandingJava {
         cat = new Cat();
         mutate = new MutateAnimal();
         System.out.println(myParent.parent);
-        myPetList = new LinkedList<FelineFamily>();
 //        changing static variable's value.
         myParent.parent = "I changed your parent. HAHA";
         System.out.println(myParent.parent);
@@ -30,50 +27,8 @@ public class UnderstandingJava {
         cat.showCatBehaviour();
     }
 
-    public void mutateCat(FelineFamily feline) {
-//        notice how the actual method has FelineFamily as its Type. Yet we passed Cat objec to it.
-//        that's because cat inherits Feline family and becomes FelineType as well as being Cat type.
-        try {
-            mutate.mutateLegs(feline);
-        } catch (Exception e) {
-            System.out.println(e);
-        } finally {
-            System.out.println("Mutation complete");
-        }
-    }
-
-//   LinkedList example
-    public void setPets() {
-
-        myPetList.add(cat);
-        myPetList.add(dog);
-
-        newCat.addToys("my new toy");
-        myPetList.add(newCat);
-    }
-
-    public void removePet(FelineFamily feline) {
-        myPetList.remove(feline);
-    }
-
-    public void disownAllPets() {
-        myPetList.removeAll(myPetList);
-    }
-
-    public void showPets() {
-        if (myPetList.size() == 0) {
-            System.out.println("No pets");
-        }
-        else {
-            System.out.println("Pets:");
-            for(FelineFamily pet : myPetList) {
-                System.out.println(pet);
-            }
-        }
-    }
-
-//    Generics example
-public void generics() {
+    //    Generics example
+    public void generics() {
         Generics<Integer> intergerGeneric = new Generics<Integer>();
         intergerGeneric.set(1);
 //        setting char in our integerGeneric would throw a compiler error because we already descriped that its a Integer Generic
@@ -106,4 +61,20 @@ public void generics() {
 //        numberGeneric.set("s");
 
     }
+
+//    Exceptions
+    public void mutateCat(FelineFamily feline, Integer legs) {
+//        notice how the actual method has FelineFamily as its Type. Yet we passed Cat objec to it.
+//        that's because cat inherits Feline family and becomes FelineType as well as being Cat type.
+        try {
+            mutate.mutateLegs(feline, legs);
+        } catch (InvalidTypeException e) {
+            System.out.println(e);
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            System.out.println("Cleaning up the lab after mutation experiment whether it failed or not.");
+        }
+    }
+
 }

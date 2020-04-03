@@ -1,15 +1,15 @@
 package com.company;
 
+import com.company.java101.CollectionsExample;
 import com.company.java101.UnderstandingJava;
+import com.company.java101.oop.Frog;
 
 public class Main {
 
     public static void main(String[] args) {
         UnderstandingJava myLearning = new UnderstandingJava();
         myLearning.showCat();
-        myLearning.mutateCat(myLearning.cat);
-        System.out.println("");
-        myLearning.mutateCat(myLearning.dog);
+
         System.out.println("");
         myLearning.cat.addToys("stuffed mouse");
         myLearning.cat.addToys("electronic cockroach");
@@ -18,14 +18,17 @@ public class Main {
         myLearning.cat.setOldToys();
         myLearning.cat.showOldToys();
 
-        myLearning.setPets();
-        myLearning.removePet(myLearning.newCat);
-        myLearning.showPets();
-
-        myLearning.disownAllPets();
-        myLearning.showPets();
-
         myLearning.generics();
+
+        System.out.println("");
+        myLearning.mutateCat(myLearning.cat, 3);
+        myLearning.mutateCat(myLearning.dog, 2);
+        Frog frog = new Frog();
+        myLearning.mutateCat(frog, null);
+
+        System.out.println("");
+        CollectionsExample collection = new CollectionsExample();
+
 
     }
 }
