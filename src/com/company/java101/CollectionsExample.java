@@ -5,6 +5,7 @@ import java.util.*;
 public class CollectionsExample {
 
     LinkedHashMap<Character, Integer> objectData = new LinkedHashMap<>();
+    Iterator iterate;
 
     public CollectionsExample() {
         HashMap result = alphabetCount("Zaira");
@@ -12,6 +13,18 @@ public class CollectionsExample {
         System.out.println("Is Hell substring of Hello: " + isSubString("Hello", "hell"));
         System.out.println("Reverse of Hello is: " + reverseString("Hello"));
         cacheDataOnFIFO(result);
+
+        HashMap map = new HashMap();
+        map.put(1,'z');
+        map.put(2, 'p');
+
+        cacheDataOnFIFO(map);
+        iterate = objectData.entrySet().iterator();
+
+        System.out.println(firstCache());
+        System.out.println(firstCache());
+        System.out.println(firstCache());
+
     }
 
     HashMap<Character, Integer> alphabetCount(String word) {
@@ -47,7 +60,17 @@ public class CollectionsExample {
         return word;
     }
 
-    void cacheDataOnFIFO(HashMap<Character, Integer> object) {
+    void cacheDataOnFIFO(HashMap object) {
         objectData.putAll(object);
+    }
+
+    HashMap firstCache(){
+        Map.Entry<Integer, String> entry = null;
+        if (iterate.hasNext()) {
+            entry = (Map.Entry<Integer, String>) iterate.next();
+        }
+        HashMap map = new HashMap();
+        map.put(entry.getKey(), entry.getValue());
+        return map;
     }
 }
