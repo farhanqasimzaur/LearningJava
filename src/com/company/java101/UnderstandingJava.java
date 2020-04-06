@@ -77,4 +77,7 @@ public class UnderstandingJava {
         }
     }
 
+    public void mutateSound(String word) {
+        mutate.mutateSound(word);
+    }
 }

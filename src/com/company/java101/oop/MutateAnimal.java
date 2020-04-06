@@ -21,9 +21,9 @@ final public class MutateAnimal {
         }
     }
 
-    public void mutateSound(String sound) throws InvalidSpecification {
+    public void mutateSound(String sound)  {
         if (sound.length() == 0) {
-            throw new InvalidSpecification("Animal cant be without sound");
+            throw new InvalidTypeException("Animal cant be without sound");
         }
     }
 }

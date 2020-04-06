@@ -64,12 +64,12 @@ public class CollectionsExample {
         objectData.putAll(object);
     }
 
-    HashMap firstCache(){
+    HashMap<Integer, String> firstCache(){
         Map.Entry<Integer, String> entry = null;
         if (iterate.hasNext()) {
             entry = (Map.Entry<Integer, String>) iterate.next();
         }
-        HashMap map = new HashMap();
+        HashMap<Integer, String> map = new HashMap<>();
         map.put(entry.getKey(), entry.getValue());
         return map;
     }
