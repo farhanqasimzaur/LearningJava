@@ -2,7 +2,6 @@ package com.company.java101.oop;
 
 import com.company.java101.InvalidSpecification;
 import com.company.java101.InvalidTypeException;
-import sun.jvm.hotspot.utilities.AssertionFailure;
 
 //can't inherit classes with final keywords. Helps when you dont want unintentionally to implement this behaviour in some other class.
 //Ex: FelineFamily can't mutate themselves, neither can dogs or cats. Only humans or nature mutate them after considering certain aspects

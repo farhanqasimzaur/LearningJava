@@ -4,7 +4,7 @@ import java.util.*;
 
 public class CollectionsExample {
 
-    LinkedHashMap<Character, Integer> objectData = new LinkedHashMap<>();
+    LinkedHashMap<Character, Integer> objectData = new LinkedHashMap();
     Iterator iterate;
 
     public CollectionsExample() {

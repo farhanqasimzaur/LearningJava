@@ -25,7 +25,7 @@ class DBConnector {
         String connectionString = String.format("jdbc:mysql://%s:%s/%s", IP, port, dbName);
         Connection connection = null;
         try{
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(connectionString, username, password);
         } catch(Exception e) { System.out.println(e); }
         return connection;
