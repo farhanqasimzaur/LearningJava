@@ -1,5 +1,6 @@
 com/company/java101/oop/Animal.class
 com/company/Main.class
+com/company/restfulAPIs/StudentModel.class
 com/company/java101/UnderstandingJava.class
 com/company/java101/oop/FelineFamily.class
 com/company/java101/InvalidSpecification.class
@@ -16,3 +17,4 @@ com/company/connectingMySQL/QueryDatabase.class
 com/company/java101/oop/MutateAnimal.class
 com/company/java101/BoundedGenerics.class
 com/company/java101/CollectionsExample.class
+com/company/restfulAPIs/StudentResource.class
