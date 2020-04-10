@@ -1,20 +1,21 @@
 package com.company.hibernate;
 
-import java.util.HashMap;
+import javax.persistence.*;
 
+@Entity
+@Table(name="STUDENTS")
 public class Students {
+    @Id @GeneratedValue
+    @Column(name = "id")
     private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "age")
     private int age;
 
     public Students(String name, int age) {
         this.name = name;
         this.age = age;
-    }
-    public Students(HashMap student) {
-        this.name = (String) student.get("name");
-        this.age = (int) student.get("age");
-        this.id = (int) student.get("id");
     }
 
     public Students(){}

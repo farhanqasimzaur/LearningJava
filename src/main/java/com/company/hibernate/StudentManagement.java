@@ -13,7 +13,13 @@ public class StudentManagement {
 
     public StudentManagement(){
         try {
-            factory = new Configuration().configure().buildSessionFactory();
+            Configuration configuration = new Configuration();
+            configuration.setProperty("hibernate.connection.username", "root");
+            configuration.setProperty("hibernate.connection.password", "admin123");
+            configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost/learningJava");
+            configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+            configuration.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+            factory = configuration.addAnnotatedClass(Students.class).buildSessionFactory();
         } catch (Throwable ex) {
             System.err.println("Failed to create sessionFactory object." + ex);
             throw new ExceptionInInitializerError(ex);
