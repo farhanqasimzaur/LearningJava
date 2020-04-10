@@ -39,16 +39,13 @@ public class StudentManagement {
         return studentID;
     }
 
-    public Students listStudents( ){
+    public Students getStudent(Integer studentID ){
         Session session = factory.openSession();
         Transaction tx = null;
         Students students = null;
         try {
             tx = session.beginTransaction();
-            List studentsList = session.createQuery("FROM Students").list();
-            for (Iterator iterator = studentsList.iterator(); iterator.hasNext();){
-                students = (Students) iterator.next();
-            }
+            students = session.get(Students.class, studentID);
             tx.commit();
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
@@ -59,8 +56,28 @@ public class StudentManagement {
         return students;
     }
 
+    public List listStudents( ){
+        Session session = factory.openSession();
+        Transaction tx = null;
+        List studentsList = null;
+        try {
+            tx = session.beginTransaction();
+            studentsList = session.createQuery("FROM Students").list();
+            for (Iterator iterator = studentsList.iterator(); iterator.hasNext();){
+            Students students = (Students) iterator.next();
+            }
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return studentsList;
+    }
 
-    public void updateEmployee(Integer studentID, int age) {
+
+    public void updateStudent(Integer studentID, int age) {
         Session session = factory.openSession();
         Transaction tx = null;
         try {
@@ -82,7 +99,7 @@ public class StudentManagement {
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            Students student = session.get(Students.class, studentID);
+            Students student = (Students) session.get(Students.class, studentID);
             session.delete(student);
             transaction.commit();
         } catch (HibernateException e) {
