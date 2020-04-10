@@ -1,6 +1,8 @@
 package com.company.restfulAPIs;
 
 import com.company.connectingMySQL.StudentsDOA;
+import com.company.hibernate.StudentManagement;
+import com.company.hibernate.Students;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -10,12 +12,14 @@ import static java.lang.Integer.parseInt;
 @Path("/v1/students")
 public class StudentsResource {
     StudentsDOA studentsDOA = new StudentsDOA();
+    StudentManagement studentManagement = new StudentManagement();
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public ArrayList getStudentsDOA() {
+    public Students getStudentsDOA() {
         ArrayList studentsList = studentsDOA.getAll();
-        return studentsList;
+        Students students = studentManagement.listStudents();
+        return students;
     }
 
     @GET

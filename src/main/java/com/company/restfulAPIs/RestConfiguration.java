@@ -1,4 +1,6 @@
 package com.company.restfulAPIs;
+import com.company.hibernate.StudentManagement;
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.ws.rs.core.Application;
