@@ -2,18 +2,22 @@ package com.company.connectingMySQL;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Students {
 
-    public void getAll() {
+    public ArrayList getAll() {
+        ArrayList resultSet = null;
         try {
             QueryDatabase queryDatabase = QueryDatabase.instantiate();
             String query = "Select * from students";
-            ArrayList resultSet = queryDatabase.get(query);
-            this.formatResult(resultSet);
+            resultSet = queryDatabase.get(query);
+//            this.formatResult(resultSet);
         } catch (SQLException e){
             System.out.println(e);
         }
+        System.out.println(resultSet);
+        return resultSet;
     }
 
     public void getWith(String name, int age){

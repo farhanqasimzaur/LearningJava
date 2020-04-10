@@ -1,7 +1,7 @@
 package com.company;
 
 import com.company.connectingMySQL.Students;
-import com.company.restfulAPIs.RestClient;
+import com.company.restfulAPIs.StudentsService;
 
 public class Main {
 
@@ -12,11 +12,5 @@ public class Main {
 //        student.create("new", 20);
 //        student.updateAge(1, 50);
 //        student.getAll();
-
-        RestClient restClient = new RestClient();
-        //fire the get request on the server
-        restClient.getRequest();
-        //method to fire the post request on the server
-//        restClient.postRequest();
     }
 }

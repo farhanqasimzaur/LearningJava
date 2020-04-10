@@ -1,20 +1,21 @@
 package com.company.restfulAPIs;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import java.util.HashMap;
 
-@XmlRootElement
 public class StudentModel {
-    @XmlElement String name;
-    @XmlElement int age;
+    int id;
+    String name;
+    int age;
 
-    public StudentModel(String name, int age) {
+    public StudentModel(String name, int age, int id) {
         this.name = name;
         this.age = age;
+        this.id = id;
     }
-    public StudentModel(StudentModel student) {
-        this.name = student.name;
-        this.age = student.age;
+    public StudentModel(HashMap student) {
+        this.name = (String) student.get("name");
+        this.age = (int) student.get("age");
+        this.id = (int) student.get("id");
     }
     public String getName() {
         return name;
@@ -24,6 +25,8 @@ public class StudentModel {
         return age;
     }
 
+    public int getId() { return this.id; }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -31,4 +34,6 @@ public class StudentModel {
     public void setAge(int age) {
         this.age = age;
     }
+
+
 }
