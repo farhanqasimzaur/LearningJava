@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Students {
+public class StudentsDOA {
 
     public ArrayList getAll() {
         ArrayList resultSet = null;

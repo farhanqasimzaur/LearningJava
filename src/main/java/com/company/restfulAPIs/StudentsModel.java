@@ -2,23 +2,23 @@ package com.company.restfulAPIs;
 
 import java.util.HashMap;
 
-public class StudentModel {
+public class StudentsModel {
     int id;
     String name;
     int age;
 
-    public StudentModel(String name, int age, int id) {
+    public StudentsModel(String name, int age) {
         this.name = name;
         this.age = age;
         this.id = id;
     }
-    public StudentModel(HashMap student) {
+    public StudentsModel(HashMap student) {
         this.name = (String) student.get("name");
         this.age = (int) student.get("age");
         this.id = (int) student.get("id");
     }
 
-    public StudentModel(){}
+    public StudentsModel(){}
 
     public String getName() {
         return name;

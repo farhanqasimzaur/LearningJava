@@ -1,6 +1,6 @@
 package com.company.restfulAPIs;
 
-import com.company.connectingMySQL.Students;
+import com.company.connectingMySQL.StudentsDOA;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -9,12 +9,12 @@ import static java.lang.Integer.parseInt;
 
 @Path("/v1/students")
 public class StudentsResource {
-    Students students = new Students();
+    StudentsDOA studentsDOA = new StudentsDOA();
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public ArrayList getStudents() {
-        ArrayList studentsList = students.getAll();
+    public ArrayList getStudentsDOA() {
+        ArrayList studentsList = studentsDOA.getAll();
         return studentsList;
     }
 
@@ -22,26 +22,26 @@ public class StudentsResource {
     @Path("/{param}")
     @Produces({MediaType.APPLICATION_JSON})
     public ArrayList getStudentWithId(@PathParam("param") String id) {
-        ArrayList studentsList = students.getWith(parseInt(id));
+        ArrayList studentsList = studentsDOA.getWith(parseInt(id));
         return studentsList;
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void createStudent(StudentModel studentModel) {
-        students.create(studentModel.name, studentModel.age);
+    public void createStudent(StudentsModel studentsModel) {
+        studentsDOA.create(studentsModel.name, studentsModel.age);
     }
 
     @PUT
     @Path("/{param}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void createStudent(StudentModel studentModel, @PathParam("param") String id) {
-        students.updateAge(parseInt(id), studentModel.age);
+    public void createStudent(StudentsModel studentsModel, @PathParam("param") String id) {
+        studentsDOA.updateAge(parseInt(id), studentsModel.age);
     }
 
     @DELETE
     @Consumes(MediaType.APPLICATION_JSON)
-    public void deleteStudent(StudentModel studentModel) {
-        students.delete(studentModel.id);
+    public void deleteStudent(StudentsModel studentsModel) {
+        studentsDOA.delete(studentsModel.id);
     }
 }

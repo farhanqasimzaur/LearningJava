@@ -6,7 +6,7 @@ public class StudentsService {
 
     private static StudentsService instantiation = null;
 
-    private ArrayList<StudentModel> studentsList = new ArrayList<>();
+    private ArrayList<StudentsModel> studentsList = new ArrayList<>();
 
     public static StudentsService instantiate(){
         if(instantiation != null) {
@@ -18,10 +18,10 @@ public class StudentsService {
 
     private StudentsService() {}
 
-    public void addStudent(StudentModel student) {
+    public void addStudent(StudentsModel student) {
         studentsList.add(student);
     }
-    public ArrayList<StudentModel> getStudents() {
+    public ArrayList<StudentsModel> getStudents() {
         return studentsList;
     }
 }
