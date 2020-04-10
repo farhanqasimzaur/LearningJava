@@ -27,7 +27,6 @@
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.5" />
           <element id="library" level="project" name="Maven: net.jcip:jcip-annotations:1.0" />
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.0.Final" />
-          <element id="library" level="project" name="Maven: org.json:org.json:chargebee-1.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

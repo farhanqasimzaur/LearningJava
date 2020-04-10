@@ -42,15 +42,17 @@ public class Students {
         }
     }
 
-    public void getWith(int id){
+    public ArrayList getWith(int id){
+        ArrayList resultSet = null;
         try {
             QueryDatabase queryDatabase = QueryDatabase.instantiate();
             String query = String.format("Select * from students where id = %d", id);
-            ArrayList resultSet = queryDatabase.get(query);
+            resultSet = queryDatabase.get(query);
             this.formatResult(resultSet);
         } catch (SQLException e){
             System.out.println(e);
         }
+        return resultSet;
     }
 
     public void create(String name, int age) {

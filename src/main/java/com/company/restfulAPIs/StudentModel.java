@@ -17,6 +17,9 @@ public class StudentModel {
         this.age = (int) student.get("age");
         this.id = (int) student.get("id");
     }
+
+    public StudentModel(){}
+
     public String getName() {
         return name;
     }
