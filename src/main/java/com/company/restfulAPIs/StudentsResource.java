@@ -2,6 +2,7 @@ package com.company.restfulAPIs;
 
 import com.company.connectingMySQL.StudentsDOA;
 import com.company.hibernate.StudentManagement;
+import com.company.hibernate.StudentNamedQueries;
 import com.company.hibernate.Students;
 
 import javax.ws.rs.*;
@@ -12,7 +13,6 @@ import static java.lang.Integer.parseInt;
 
 @Path("/v1/students")
 public class StudentsResource {
-    StudentsDOA studentsDOA = new StudentsDOA();
     StudentManagement studentManagement = new StudentManagement();
 
     @GET

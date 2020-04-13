@@ -10,20 +10,25 @@ import java.util.List;
 
 public class StudentManagement {
     private static SessionFactory factory;
+    Configuration configuration;
 
     public StudentManagement(){
         try {
-            Configuration configuration = new Configuration();
-            configuration.setProperty("hibernate.connection.username", "root");
-            configuration.setProperty("hibernate.connection.password", "admin123");
-            configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost/learningJava");
-            configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-            configuration.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+            configuration = new Configuration();
+            setConfiguration();
             factory = configuration.addAnnotatedClass(Students.class).buildSessionFactory();
         } catch (Throwable ex) {
             System.err.println("Failed to create sessionFactory object." + ex);
             throw new ExceptionInInitializerError(ex);
         }
+    }
+
+    private void setConfiguration() {
+        configuration.setProperty("hibernate.connection.username", "root");
+        configuration.setProperty("hibernate.connection.password", "admin123");
+        configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost/learningJava");
+        configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+        configuration.setProperty("hibernate.hbm2ddl.auto", "create-drop");
     }
 
     public Integer addStudent(String name, int age){
