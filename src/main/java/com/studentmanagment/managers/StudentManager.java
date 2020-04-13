@@ -1,6 +1,6 @@
-package managers;
+package com.studentmanagment;
 
-import models.Students;
+import com.studentmanagment.models.Students;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

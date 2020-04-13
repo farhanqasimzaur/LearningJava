@@ -1,4 +1,4 @@
-package models;
+package com.studentmanagment.models;
 
 import javax.persistence.*;
 
@@ -8,11 +8,11 @@ public class Students {
 
     @Id @GeneratedValue
     @Column(name = "id")
-    private int id;
+    public int id;
     @Column(name = "name")
-    private String name;
+    public String name;
     @Column(name = "age")
-    private int age;
+    public int age;
 
     public Students(String name, int age) {
         this.name = name;

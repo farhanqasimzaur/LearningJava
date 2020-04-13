@@ -1,6 +1,6 @@
-package managers;
+package com.studentmanagment;
 
-import models.Students;
+import com.studentmanagment.models.Students;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
