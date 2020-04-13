@@ -1,4 +1,4 @@
-package com.studentmanagment;
+package com.studentmanagment.managers;
 
 import com.studentmanagment.models.Students;
 import org.hibernate.HibernateException;

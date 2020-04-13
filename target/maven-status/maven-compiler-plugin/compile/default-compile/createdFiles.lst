@@ -1,3 +1,5 @@
-models/Students.class
-managers/StudentManager.class
-managers/HibernateManager.class
+com/studentmanagment/controllers/StudentsController.class
+com/studentmanagment/configurations/RestConfiguration.class
+com/studentmanagment/managers/HibernateManager.class
+com/studentmanagment/managers/StudentManager.class
+com/studentmanagment/models/Students.class

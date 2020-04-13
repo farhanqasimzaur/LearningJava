@@ -1,6 +1,6 @@
-package configurations;
+package com.studentmanagment.configurations;
 
-import controllers.StudentsController;
+import com.studentmanagment.controllers.StudentsController;
 
 import java.util.HashSet;
 import java.util.Set;

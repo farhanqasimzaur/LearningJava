@@ -1,3 +1,5 @@
-/Users/Intern/IdeaProjects/StudentManagement/src/main/java/managers/StudentManager.java
-/Users/Intern/IdeaProjects/StudentManagement/src/main/java/models/Students.java
-/Users/Intern/IdeaProjects/StudentManagement/src/main/java/managers/HibernateManager.java
+/Users/Intern/IdeaProjects/StudentManagement/src/main/java/com/studentmanagment/models/Students.java
+/Users/Intern/IdeaProjects/StudentManagement/src/main/java/com/studentmanagment/controllers/StudentsController.java
+/Users/Intern/IdeaProjects/StudentManagement/src/main/java/com/studentmanagment/managers/HibernateManager.java
+/Users/Intern/IdeaProjects/StudentManagement/src/main/java/com/studentmanagment/managers/StudentManager.java
+/Users/Intern/IdeaProjects/StudentManagement/src/main/java/com/studentmanagment/configurations/RestConfiguration.java

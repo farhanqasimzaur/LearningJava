@@ -1,13 +1,15 @@
-package controllers;
+package com.studentmanagment.controllers;
 
-import managers.StudentManager;
-import models.Students;
+import com.studentmanagment.managers.StudentManager;
+import com.studentmanagment.models.Students;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
+@Path("v1/students")
 public class StudentsController {
     StudentManager studentManagement = new StudentManager();
 
