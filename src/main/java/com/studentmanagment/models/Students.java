@@ -12,10 +12,10 @@ import javax.persistence.*;
 )
 
 @Entity
-@Table(name="STUDENTS")
+@Table(name="students")
 public class Students {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     public int id;
     @Column(name = "name")
