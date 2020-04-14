@@ -9,7 +9,8 @@ import java.util.List;
 
 @Path("v1/students")
 public class StudentsController {
-    StudentsServiceBean studentsServiceBean = new StudentsServiceBean();
+
+    private StudentsServiceBean studentsServiceBean = new StudentsServiceBean();
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})

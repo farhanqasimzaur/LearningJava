@@ -5,7 +5,6 @@ import com.studentmanagment.models.Students;
 
 import javax.ejb.Local;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import java.util.List;
 import static java.lang.Integer.parseInt;
 
@@ -13,8 +12,7 @@ import static java.lang.Integer.parseInt;
 @Stateless
 public class StudentsServiceBean implements StudentService {
 
-    @Inject
-    private StudentManager studentManager;
+    private StudentManager studentManager = new StudentManager();
 
     public Students getStudent(String id) {
         return studentManager.getStudent(parseInt(id));

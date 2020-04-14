@@ -1,7 +1,7 @@
 com/studentmanagment/controllers/StudentsController.class
+com/studentmanagment/services/StudentsServiceBean.class
 com/studentmanagment/managers/HibernateManager.class
 com/studentmanagment/managers/StudentManager.class
-com/studentmanagment/services/StudentInterface.class
-com/studentmanagment/services/StudentsService.class
 com/studentmanagment/configurations/RestConfiguration.class
+com/studentmanagment/services/StudentService.class
 com/studentmanagment/models/Students.class

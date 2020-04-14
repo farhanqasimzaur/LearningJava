@@ -28,7 +28,6 @@ public class HibernateManager {
         configuration.setProperty("hibernate.connection.password", "admin123");
         configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/learningJava");
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-        configuration.setProperty("hibernate.hbm2ddl.auto", "create-drop");
         configuration.setProperty("hibernate.id.new_generator_mappings", "false");
     }
 
