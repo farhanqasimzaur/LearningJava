@@ -3,12 +3,18 @@ package com.studentmanagment.services;
 import com.studentmanagment.managers.StudentManager;
 import com.studentmanagment.models.Students;
 
+import javax.ejb.Local;
+import javax.ejb.Stateless;
+import javax.inject.Inject;
 import java.util.List;
 import static java.lang.Integer.parseInt;
 
-public class StudentsService {
+@Local(StudentService.class)
+@Stateless
+public class StudentsServiceBean implements StudentService {
 
-    StudentManager studentManager = new StudentManager();
+    @Inject
+    private StudentManager studentManager;
 
     public Students getStudent(String id) {
         return studentManager.getStudent(parseInt(id));
