@@ -2,6 +2,15 @@ package com.studentmanagment.models;
 
 import javax.persistence.*;
 
+@NamedQueries(
+        {
+                @NamedQuery(name = "Students-retrieveAll", query = "from Students"),
+                @NamedQuery(name = "Students-retrieveWithID", query = "from Students where id = :studentID"),
+                @NamedQuery(name = "Students-updateAge", query = "Update Students set age = :studentAge where id = :studentID"),
+                @NamedQuery(name = "Students-deleteWithID", query = "delete from Students where id = :studentID"),
+        }
+)
+
 @Entity
 @Table(name="STUDENTS")
 public class Students {
@@ -40,3 +49,4 @@ public class Students {
         this.age = age;
     }
 }
+
