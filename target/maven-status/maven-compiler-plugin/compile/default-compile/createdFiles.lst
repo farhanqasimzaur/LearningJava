@@ -1,5 +1,5 @@
 com/studentmanagment/controllers/StudentsController.class
-services/StudentsService.class
+com/studentmanagment/services/StudentsService.class
 com/studentmanagment/configurations/RestConfiguration.class
 com/studentmanagment/managers/HibernateManager.class
 com/studentmanagment/managers/StudentManager.class

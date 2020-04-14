@@ -1,7 +1,7 @@
 package com.studentmanagment.controllers;
 
 import com.studentmanagment.models.Students;
-import services.StudentsService;
+import com.studentmanagment.services.StudentsService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

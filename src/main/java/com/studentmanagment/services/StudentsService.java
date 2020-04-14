@@ -1,4 +1,4 @@
-package services;
+package com.studentmanagment.services;
 
 import com.studentmanagment.managers.StudentManager;
 import com.studentmanagment.models.Students;
